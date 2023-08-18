@@ -13,9 +13,7 @@ function App() {
   const [width, setWidth] = useState(window.innerWidth);
   const { isDarkMode, isShowingLeftBar, updateIsShowingLeftBar } =
     useContext(GeralContext);
-  // const isDarkMode = context.isDarkMode
-  // console.log('aqui',isDarkMode.isDarkMode)
-  console.log("aquis", isShowingLeftBar);
+
 
   let currentTheme;
   if (isDarkMode) currentTheme = themeData.dark;

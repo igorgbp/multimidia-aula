@@ -1,4 +1,6 @@
-import user from "../assets/igorpic.png";
+import logoCs from "../assets/csgoLogo.png";
+import logoCsInverted from "../assets/csgoLogo-modified.png";
+
 import { useContext, useState } from "react";
 import { GeralContext } from "../context/geral/geralContext";
 import {
@@ -6,6 +8,7 @@ import {
   AiOutlineInstagram,
   AiOutlineLinkedin,
   AiFillCaretLeft,
+  AiOutlineBook,
 } from "react-icons/ai";
 import {TbArrowBarLeft} from 'react-icons/tb';
 import { FaUserAlt } from "react-icons/fa";
@@ -13,6 +16,7 @@ import { MdContacts } from "react-icons/md";
 import { FiPaperclip } from "react-icons/fi";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import { ThemeContext } from "../context/theme/themeContext";
+import { themeData } from "../context/theme/values";
 
 const Leftbar = () => {
   const {
@@ -47,12 +51,12 @@ const Leftbar = () => {
   const options = [
     {
       id: 1,
-      name: "Sobre mim",
-      icon: "user",
+      name: "O que é o CS",
+      icon: "history",
     },
     {
       id: 2,
-      name: "Portfolio",
+      name: "O inicio",
       icon: "portfolio",
     },
     {
@@ -80,8 +84,8 @@ const Leftbar = () => {
   const Icon = ({ item }) => {
     console.log("açsdflkj", item);
     switch (item.icon) {
-      case "user":
-        return <FaUserAlt color={currentTheme.text} />;
+      case "history":
+        return <AiOutlineBook color={currentTheme.text} />;
       case "portfolio":
         return <FiPaperclip color={currentTheme.text} />;
       case "contact":
@@ -111,16 +115,16 @@ const Leftbar = () => {
         Igor Pereira
       </p> */}
       <img
-        src={user}
+        src={currentTheme == themeData.dark? logoCsInverted   :logoCs}
         alt="Igor Pereira"
         class="mt-2 mx-auto rounded-xl w-56 h-56 object-cover"
       />
       <p class="mx-2 text-center mt-2" style={{ color: currentTheme.text }}>
-        Olá meu nome é Igor, sou desenvolvedor front end. Bem vindo ao meu
-        portfolio
+       Igor Pereira <br></br>
+       Wagner Oliveira
       </p>
       {/* <hr class="mt-2 w-full" style={{ borderColor: currentTheme.text }}></hr> */}
-      <ul class="flex mx-2 items-center mt-2 space-x-1 justify-center h-14">
+      {/* <ul class="flex mx-2 items-center mt-2 space-x-1 justify-center h-14">
         {links.map((link) => {
           return (
             <li
@@ -134,8 +138,8 @@ const Leftbar = () => {
             </li>
           );
         })}
-      </ul>
-      <div class="py-3 ">
+      </ul> */}
+      <div class="py-3  mt-8">
         {options.map((item) => {
           return (
             <button
@@ -144,7 +148,7 @@ const Leftbar = () => {
               // } mb-1 rounded-md py-3 px-4 mx-auto w-full ${
               //   isDarkMode ? "hover:bg-slate-400" : "hover:bg-slate-500"
               // }  space-x-3 justify-start hover:cursor-pointer`}
-              className="flex mx-auto items-center hover:font-bold  mb-2 gap-2 justify-center hover:cursor-pointer w-fit"
+              className="flex  mx-auto items-center hover:font-bold  mb-2 gap-2 justify-center hover:cursor-pointer w-fit mr-auto"
               onClick={() => {setCurrentOption(item.id);handleShowLeftBarOnOptionClick()}}
             >
               <Icon item={item} />

@@ -1,8 +1,8 @@
 import React from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/theme/themeContext";
-import aboutMePic from "../../assets/igor.png";
-
+import tenentePic from "../../assets/primeiro-tenente-csgo.png";
+import gif from '../../assets/gifs-de-csgo-1.gif'
 import { MdContacts } from "react-icons/md";
 import { FiPaperclip } from "react-icons/fi";
 import { GeralContext } from "../../context/geral/geralContext";
@@ -26,27 +26,29 @@ const AboutMe = () => {
     );
   };
   return (
-    <div class=" flex flex-col  lg:pr-24">
+    <div class=" flex flex-col  lg:pr-24 h-screen">
       <div class="flex space-x-6 ">
         <div class="h-auto  flex flex-col">
           <div class=" mb-4">
             <p class=" text-3xl md:text-5xl font-black mx-auto md:mx-0 w-fit" style={{ color: theme.text }}>
-              Igor Pereira
+              O que é o CS?
             </p>
-            <p
+            {/* <p
               class=" text-xl md:text-2xl font-bold mt-1 mx-auto md:mx-0 w-fit"
               style={{ color: theme.textSecondary }}
             >
               Desenvolvedor Front-end
-            </p>
-            <p class="mt-4 mx-auto md:mx-0 w-fit text-center md:text-start" style={{ color: theme.textSecondary }}>
-              Sou um desenvolvedor front end para aplicações web e mobile. Quer
-              saber como posso ajudar seu projeto? Confira meu portfólio de
-              projetos e currículo online.
+            </p> */}
+            <p class="mt-8 mx-auto md:mx-0 w-fit text-center md:text-start" style={{ color: theme.textSecondary }}>
+            O Counter-Strike original teve como sequência o Counter-Strike: Condition Zero, desenvolvido pela Turtle Rock Studios e lançado em março de 2004. Uma versão anterior de Condition Zero que foi desenvolvida pela Ritual Entertainment foi lançada junto com ele como Condition Zero: Deleted Scenes. Oito meses depois, a Valve lançou o Counter-Strike: Source, uma recriação do Counter-Strike original e o primeiro da franquia a usar o novo motor Source criado pela Valve.O quarto título da série principal, Counter-Strike: Global Offensive, foi lançado pela Valve em 2012 para Windows, OS X, Xbox 360, e PlayStation 3. 
             </p>
           </div>
 
-          <div class="flex gap-2 flex-wrap justify-center md:justify-start ">
+          <img
+          src={gif}
+          class="w-full object-contain h-96 lg:block hidden"
+        />
+          {/* <div class="flex gap-2 flex-wrap justify-center md:justify-start ">
             <button
               class="p-2  rounded-lg w-44   hover:font-bold flex items-center justify-center"
               onClick={() => setCurrentOption(2)}
@@ -69,8 +71,8 @@ const AboutMe = () => {
                 Entrar em contato
               </p>
             </button>
-          </div>
-          <div class="mt-8 md:mt-20">
+          </div> */}
+          {/* <div class="mt-8 md:mt-20">
             <p class="text-xl md:text-3xl font-bold mx-auto md:mx-0 w-fit" style={{ color: theme.text }}>
               O que eu faço?
             </p>
@@ -80,20 +82,15 @@ const AboutMe = () => {
               React Native. Abaixo tem um pequeno resumo das tecnologias em que
               tenho experiência.
             </p>
-          </div>
+          </div> */}
         </div>
         <img
-          src={flutuante}
-          class="w-11/12 object-contain h-96 lg:block hidden"
+          src={tenentePic}
+          class="w-11/12 object-contain h-96 lg:block hidde rounded-md"
         />
       </div>
 
-      {/* <div class="flex space-x-4 mt-4 border-2 border-blue-600 flex-wrap h-full justify-center p-5">
-        {skills.map((item) => {
-          return <Item item={item} />
-        })}
-      </div> */}
-      <div class=" mt-5">
+      {/* <div class=" mt-5">
         <ul class=" flex flex-wrap  h-full justify-center md:justify-start gap-2">
           {skills.map((item) => {
             return (
@@ -103,7 +100,7 @@ const AboutMe = () => {
             );
           })}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };
