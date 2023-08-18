@@ -1,6 +1,6 @@
 import React, { useContext }  from "react";
-import AboutMe from "./ContentScreens/AboutMe";
-import Portifolio from "./ContentScreens/Portifolio";
+import WhatIs from "./ContentScreens/whatIs";
+import Begin from "./ContentScreens/begin";
 import Contact from "./ContentScreens/Contact";
 import { GeralContext } from "../context/geral/geralContext";
 
@@ -10,8 +10,8 @@ const Content = () => {
 
   return (
     <div class="py-10">
-     { currentOption == 1 && <AboutMe/>}
-     { currentOption == 2 && <Portifolio/>}
+     { currentOption == 1 && <WhatIs/>}
+     { currentOption == 2 && <Begin/>}
      { currentOption == 3 && <Contact/>}
     </div>
     

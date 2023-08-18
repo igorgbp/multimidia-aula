@@ -7,7 +7,7 @@ import Clube_two from "../../assets/clube-2.png";
 import Quiz from '../../assets/quiz.png'
 import { GeralContext } from "../../context/geral/geralContext";
 import { BsFillCalendarWeekFill, BsGit } from "react-icons/bs";
-const Portifolio = () => {
+const Begin = () => {
   const { isDarkMode } = useContext(GeralContext);
   const theme = useContext(ThemeContext);
 
@@ -110,28 +110,32 @@ const Portifolio = () => {
     );
   };
   return (
-    <div class=" flex items-center flex-col">
+    <div class=" flex items-center flex-col h-screen">
       <div class="px-4 md:px-0">
         <p
           class="text-center md:text-start text-3xl md:text-5xl font-black"
           style={{ color: theme.text }}
         >
-        Portfólio
+        O início
         </p>
-        <p
+        {/* <p
           class="text-center md:text-start mt-2"
           style={{ color: theme.textSecondary }}
         >
           Bem vindo ao meu portifólio online, aqui você encontra alguns dos meus
           projetos pessoais. Quer ajuda construindo sua aplicação?
-        </p>
+        </p> */}
+        <p class="mt-8 mx-auto md:mx-0 w-fit text-center md:text-start" style={{ color: theme.textSecondary }}>
+            Counter-Strike é uma série de jogos eletrônicos multijogador de tiro em primeira pessoa, no qual times de terroristas e contra-terroristas batalham entre si, respectivamente, realizando um ato de terror e prevenindo-os. A série iniciou-se no Windows em 1999 com o lançamento do primeiro jogo, Counter-Strike. 
+            </p>
       </div>
-      <div class=" mt-10 w-full">
+      
+      <iframe width="560" height="315" class="mt-8" src="https://www.youtube.com/embed/fm-alaXKXbI?si=RJYNRu2IniltWWY9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  {/* <div class=" mt-10 w-full">
         {projs.map((item) => {
           return <Item item={item} />;
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
-export default Portifolio;
+export default Begin;

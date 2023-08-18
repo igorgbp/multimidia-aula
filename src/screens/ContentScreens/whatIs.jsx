@@ -9,7 +9,7 @@ import { GeralContext } from "../../context/geral/geralContext";
 import Icon from "../../components/Icon";
 import flutuante from "../../assets/segunda.png";
 
-const AboutMe = () => {
+const whatIs = () => {
   const { setCurrentOption, skills } = useContext(GeralContext);
   const theme = useContext(ThemeContext);
   console.log(theme);
@@ -40,13 +40,13 @@ const AboutMe = () => {
               Desenvolvedor Front-end
             </p> */}
             <p class="mt-8 mx-auto md:mx-0 w-fit text-center md:text-start" style={{ color: theme.textSecondary }}>
-            O Counter-Strike original teve como sequência o Counter-Strike: Condition Zero, desenvolvido pela Turtle Rock Studios e lançado em março de 2004. Uma versão anterior de Condition Zero que foi desenvolvida pela Ritual Entertainment foi lançada junto com ele como Condition Zero: Deleted Scenes. Oito meses depois, a Valve lançou o Counter-Strike: Source, uma recriação do Counter-Strike original e o primeiro da franquia a usar o novo motor Source criado pela Valve.O quarto título da série principal, Counter-Strike: Global Offensive, foi lançado pela Valve em 2012 para Windows, OS X, Xbox 360, e PlayStation 3. 
+            Counter-Strike é uma série de jogos eletrônicos multijogador de tiro em primeira pessoa, no qual times de terroristas e contra-terroristas batalham entre si, respectivamente, realizando um ato de terror e prevenindo-os. A série iniciou-se no Windows em 1999 com o lançamento do primeiro jogo, Counter-Strike. 
             </p>
           </div>
-
+          
           <img
           src={gif}
-          class="w-full object-contain h-96 lg:block hidden"
+          class="w-full object-contain h-96 lg:block hidden rounded-lg"
         />
           {/* <div class="flex gap-2 flex-wrap justify-center md:justify-start ">
             <button
@@ -104,4 +104,4 @@ const AboutMe = () => {
     </div>
   );
 };
-export default AboutMe;
+export default whatIs;
