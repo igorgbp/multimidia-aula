@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/theme/themeContext";
 import tenentePic from "../../assets/primeiro-tenente-csgo.png";
+import gifcs from "../../assets/EntireGreatGuillemot-max-1mb.gif";
 import gif from '../../assets/gifs-de-csgo-1.gif'
 import { MdContacts } from "react-icons/md";
 import { FiPaperclip } from "react-icons/fi";
@@ -10,7 +11,7 @@ import Icon from "../../components/Icon";
 import flutuante from "../../assets/segunda.png";
 
 const whatIs = () => {
-  const { setCurrentOption, skills } = useContext(GeralContext);
+  const { setCurrentOption, skills, isDarkMode } = useContext(GeralContext);
   const theme = useContext(ThemeContext);
   console.log(theme);
 
@@ -87,6 +88,10 @@ const whatIs = () => {
         <img
           src={tenentePic}
           class="w-11/12 object-contain h-96 lg:block hidde rounded-md"
+        />
+        <img
+          src={gifcs}
+          class={`w-11/12 object-contain h-96 lg:block hidde rounded-md ${isDarkMode?"invert": "invert-0"}`}
         />
       </div>
 
