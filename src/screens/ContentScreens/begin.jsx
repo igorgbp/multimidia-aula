@@ -1,116 +1,15 @@
 import React from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/theme/themeContext";
-import ReminderVid from "../../assets/reminder-vid.mp4";
-import Clube_one from "../../assets/clube-1.png";
-import Clube_two from "../../assets/clube-2.png";
-import Quiz from '../../assets/quiz.png'
+
 import { GeralContext } from "../../context/geral/geralContext";
-import { BsFillCalendarWeekFill, BsGit } from "react-icons/bs";
 const Begin = () => {
   const { isDarkMode } = useContext(GeralContext);
   const theme = useContext(ThemeContext);
 
-  const projs = [
-    {
-      name: "Reminder",
-      media: { type: "vid", content: ReminderVid },
-      link: "https://github.com/igorgbp/reminder-2.0",
-      tec: "Javascript, React Native e Firebase",
-      description:
-        "Foi o primeiro projeto que desenvolvi em Javascript, e consequentemente o primerio em React Native, me ajudou muito a entender alguns conceitos e a me familiarizar com npm, componentização, hooks, e muito mais. Utilizei o firebase como banco para o projeto.",
-      date: "07/22 - 08/22",
-    },
-    {
-      name: "Clube do livro",
-      media: { type: "img", content: [Clube_two, Clube_one]  },
-      link: "https://github.com/igorgbp/Clube-do-Livro",
-      tec: "HTML, CSS e PHP",
-      description:
-        "Outro projeto desenvolvido para a faculdade, onde não utilizei nenhum framework, o projeto foi feito apenas com HTML, CSS e Javascript, e PHP no back-end, que neste caso é dentro do mesmo projeto.",
-      date: "11/22 - 12/22",
-    },
-    {
-      name: "Quiz",
-      media: { type: "img", content: [Quiz] },
-      link: "https://github.com/igorgbp/quiz",
-      tec: "Javascript e React",
-      description:
-        "Projeto desenvolvido para um trabalho da faculdade, que consistiu em entender conceitos sobre React.",
-      date: "03/22",
-    },
-   
-  ];
- 
-  const Item = ({ item }) => {
-    let images = item.media.content;
-    return (
-      <div
-        class=" mb-8 md:p-7 p-4 rounded-xl"
-        style={{ backgroundColor: theme.secondary }}
-      >
-        <p
-          class=" text-xl text-center md:text-start"
-          style={{ color: theme.text }}
-        >
-          {item.name}
-        </p>
-        <p
-          class="text-center md:text-start"
-          style={{ color: theme.textSecondary }}
-        >
-          {" "}
-          {item.description}
-        </p>
-        <div class="mt-4  gap-1 ">
-          {item.media.type == "vid" && (
-            <video controls className=" mx-auto h-96 ">
-              <source src={item.media.content} type="video/mp4" />
-              Seu navegador não suporta a tag de vídeo.
-            </video>
-          )}
-          {item.media.type == "img" &&
-            images.map((atual) => {
-              return (
-                <a href={atual} target="blank">
-                  <img
-                    src={atual}
-                    class="mb-1 rounded-md border-2 border-slate-500"
-                  />
-                </a>
-              );
-            })}
-        </div>
-
-        <p
-          class="mt-2 md:text-start text-center"
-          style={{ color: theme.textSecondary }}
-        >
-          {item.tec}
-        </p>
-        <div className="flex flex-row items-center gap-2 w-fit md:mx-0 mx-auto mt-2">
-          <BsGit size={20} color={theme.textSecondary} />
-          <a
-            href={item.link}
-            target="blank"
-            class={` ${
-              isDarkMode
-                ? "text-blue-300 hover:text-slate-400"
-                : "text-blue-950 hover:text-slate-500"
-            } `}
-          >
-            Respositório
-          </a>
-        </div>
-        <div className="flex flex-row items-center gap-2 w-fit md:mx-0 mx-auto mt-1">
-          <BsFillCalendarWeekFill size={20} color={theme.textSecondary} />
-          <p style={{ color: theme.textSecondary }}>{item.date}</p>
-        </div>
-      </div>
-    );
-  };
+  
   return (
-    <div class=" flex items-center flex-col h-screen">
+    <div class=" flex items-center flex-col h-screen pr-40">
       <div class="px-4 md:px-0">
         <p
           class="text-center md:text-start text-3xl md:text-5xl font-black"
@@ -118,23 +17,16 @@ const Begin = () => {
         >
         O início
         </p>
-        {/* <p
-          class="text-center md:text-start mt-2"
-          style={{ color: theme.textSecondary }}
-        >
-          Bem vindo ao meu portifólio online, aqui você encontra alguns dos meus
-          projetos pessoais. Quer ajuda construindo sua aplicação?
-        </p> */}
+ 
         <p class="mt-8 mx-auto md:mx-0 w-fit text-center md:text-start" style={{ color: theme.textSecondary }}>
-            Counter-Strike é uma série de jogos eletrônicos multijogador de tiro em primeira pessoa, no qual times de terroristas e contra-terroristas batalham entre si, respectivamente, realizando um ato de terror e prevenindo-os. A série iniciou-se no Windows em 1999 com o lançamento do primeiro jogo, Counter-Strike. 
+        O Counter-Strike original teve como sequência o Counter-Strike: Condition Zero, desenvolvido pela Turtle Rock Studios e lançado em março de 2004. Uma versão anterior de Condition Zero que foi desenvolvida pela Ritual Entertainment foi lançada junto com ele como Condition Zero: Deleted Scenes. Oito meses depois, a Valve lançou o Counter-Strike: Source, uma recriação do Counter-Strike original e o primeiro da franquia a usar o novo motor Source criado pela Valve.O quarto título da série principal, Counter-Strike: Global Offensive, foi lançado pela Valve em 2012 para Windows, OS X, Xbox 360, e PlayStation 3. 
             </p>
       </div>
+      <div class=" w-full p-0">
+      <iframe width="560" height="315" class="mt-8" src="https://www.youtube.com/embed/fm-alaXKXbI?si=RJYNRu2IniltWWY9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+      </div>
       
-      <iframe width="560" height="315" class="mt-8" src="https://www.youtube.com/embed/fm-alaXKXbI?si=RJYNRu2IniltWWY9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  {/* <div class=" mt-10 w-full">
-        {projs.map((item) => {
-          return <Item item={item} />;
-        })}
-      </div> */}
+       
     </div>
   );
 };

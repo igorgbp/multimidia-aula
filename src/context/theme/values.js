@@ -1,17 +1,17 @@
 export const themeData = {
   dark: {
-    primary: '#24293B',
-    secondary: '#3a3b48',
-    text: '#FFF',
-    textSecondary: '#cfcfcf',
-    contentPrimary: '#434556'
+    primary: '#312929',
+    secondary: '#554E47',
+    text: '#F3E8E8',
+    textSecondary: '#ECE3DA',
+    contentPrimary: '#312929'
 
   },
   light: {
-    primary: '#e6e7f1',
-    secondary: '#c0cdd7',
-    text: '#2a2a2a',
-    textSecondary: '#4b4b4b',
-    contentPrimary: '#d3d8e0'
+    primary: '#F3E8E8',
+    secondary: '#F1EAE3',
+    text: '#312929',
+    textSecondary: '#5E4E3F',
+    contentPrimary: '#F3E8E8'
   }
 };

@@ -1,15 +1,14 @@
 import logoCs from "../assets/csgoLogo.png";
-import logoCsInverted from "../assets/csgoLogo-modified.png";
+import squad from "../assets/squad.webp";
+import headshot from "../assets/headshot.png";
+import noScope from "../assets/Noscope_kill.webp"
+import gifcs from "../assets/EntireGreatGuillemot-max-1mb.gif";
+import Smoke from "../assets/Smoke_kill.webp"
+import flash from "../assets/Flashbang_assist.webp"
 
 import { useContext, useState } from "react";
 import { GeralContext } from "../context/geral/geralContext";
-import {
-  AiOutlineGithub,
-  AiOutlineInstagram,
-  AiOutlineLinkedin,
-  AiFillCaretLeft,
-  AiOutlineBook,
-} from "react-icons/ai";
+
 import {TbArrowBarLeft} from 'react-icons/tb';
 import { FaUserAlt } from "react-icons/fa";
 import { MdContacts } from "react-icons/md";
@@ -57,125 +56,92 @@ const Leftbar = () => {
     {
       id: 2,
       name: "O inicio",
-      icon: "portfolio",
+      icon: "headshot",
     },
     {
       id: 3,
-      name: "Contato",
-      icon: "contact",
-    },
-  ];
-
-  const links = [
-    {
-      icon: "instagram",
-      href: "https://instagram.com/igor.gbp",
+      name: "Mais populares",
+      icon: "smoke",
     },
     {
-      icon: "github",
-      href: "https://github.com/igorgbp",
+      id: 4,
+      name: "Linha do tempo",
+      icon: "flash",
     },
-    {
-      icon: "linkedin",
-      href: "https://www.linkedin.com/in/igorgbp/",
-    },
+  
   ];
 
   const Icon = ({ item }) => {
     console.log("açsdflkj", item);
     switch (item.icon) {
       case "history":
-        return <AiOutlineBook color={currentTheme.text} />;
-      case "portfolio":
-        return <FiPaperclip color={currentTheme.text} />;
-      case "contact":
-        return <MdContacts color={currentTheme.text} />;
-      case "instagram":
-        return (
-          <AiOutlineInstagram class="w-full h-full" color={currentTheme.text} />
-        );
-      case "github":
-        return (
-          <AiOutlineGithub class="w-full h-full" color={currentTheme.text} />
-        );
-      case "linkedin":
-        return (
-          <AiOutlineLinkedin class="w-full h-full" color={currentTheme.text} />
-        );
+        return <img src={headshot} class={`w-8 h-8 ${isDarkMode?"invert": "invert-0"}`}/>
+        // return <AiOutlineBook color={currentTheme.text} />;
+      case "headshot":
+        // return <FiPaperclip color={currentTheme.text} />;
+        return <img src={noScope}  class={`w-8 h-8 ${isDarkMode?"invert": "invert-0"}`}/>;
+
+      case "smoke": 
+      return <img src={Smoke} class={`w-8 h-8 ${isDarkMode?"invert": "invert-0"}`} />;
+      case "flash": 
+      return <img src={flash} class={`w-8 h-8 ${isDarkMode?"invert": "invert-0"}`} />;
+
+       
+    
     }
   };
 
   return (
     <div class=" justify-center px-3 py-6 items-center">
       <HideLeftBar />
-      {/* <p
-        class="text-center text-xl mt-2 font-bold"
-        style={{ color: currentTheme.text }}
-      >
-        Igor Pereira
-      </p> */}
       <img
+          src={gifcs}
+          class={`w-11/12 object-contain h-56 lg:block hidde rounded-md ${!isDarkMode?"invert": "invert-0"}`}
+        />
+      {/* <img
         src={currentTheme == themeData.dark? logoCsInverted   :logoCs}
         alt="Igor Pereira"
         class="mt-2 mx-auto rounded-xl w-56 h-56 object-cover"
-      />
+      /> */}
       <p class="mx-2 text-center mt-2" style={{ color: currentTheme.text }}>
        Igor Pereira <br></br>
        Wagner Oliveira
       </p>
-      {/* <hr class="mt-2 w-full" style={{ borderColor: currentTheme.text }}></hr> */}
-      {/* <ul class="flex mx-2 items-center mt-2 space-x-1 justify-center h-14">
-        {links.map((link) => {
-          return (
-            <li
-              class={`${
-                isDarkMode ? "" : ""
-              } p-1 rounded-lg w-12 h-12 hover:w-14 hover:h-14`}
-            >
-              <a href={link.href}>
-                <Icon item={link} />
-              </a>
-            </li>
-          );
-        })}
-      </ul> */}
+    
       <div class="py-3  mt-8">
         {options.map((item) => {
           return (
             <button
-              // className={`flex items-center ${
-              //   isDarkMode ? "bg-gray-300" : "bg-gray-600"
-              // } mb-1 rounded-md py-3 px-4 mx-auto w-full ${
-              //   isDarkMode ? "hover:bg-slate-400" : "hover:bg-slate-500"
-              // }  space-x-3 justify-start hover:cursor-pointer`}
-              className="flex  mx-auto items-center hover:font-bold  mb-2 gap-2 justify-center hover:cursor-pointer w-fit mr-auto"
+          
+              className="flex  mx-auto items-center hover:scale-110  mb-2 gap-2 justify-center hover:cursor-pointer w-fit mr-auto transition duration-50"
               onClick={() => {setCurrentOption(item.id);handleShowLeftBarOnOptionClick()}}
             >
               <Icon item={item} />
-              <p className="hover:text-xl text-lg" style={{ color: currentTheme.text }}>{item.name}</p>
+              <p className="hover:text-xl text-xl font-semibold transition duration-400" style={{ color: currentTheme.text }}>{item.name}</p>
             </button>
+            
           );
         })}
       </div>
-
       <button
         onClick={() => updateDarkMode()}
         class={`flex space-x-1 mx-auto  justify-center w-fit px-2 py-1 items-center rounded-md ${
           isDarkMode
-            ? "bg-gray-700 hover:bg-slate-600"
-            : "bg-gray-300 hover:bg-slate-400"
+            ? "bg-stone-800 hover:bg-stone-700"
+            : "bg-stone-300 hover:bg-stone-400"
         }`}
       >
         {isDarkMode ? (
-          <BsSunFill color={'#ffd16e'}  />
+          <BsSunFill color={'#dacbbd'}  />
         ) : (
-          <BsMoonFill color={'#524f88'} />
+          <BsMoonFill color={'#423a3a'} />
         )}
-
-        <p style={{ color: currentTheme.text }} class="font-semibold">
+       
+        <p  style={{ color: currentTheme.text }} class="font-semibold">
           {isDarkMode ? "Light" : "Dark"} mode
         </p>
       </button>
+
     </div>
   );
 };
